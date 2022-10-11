@@ -17,3 +17,9 @@ export const send = (color) => {
     console.log("socket not ready, request ignored");
   }
 };
+
+export const subscribe = (changeColorCallback) => {
+  socket.on("receive", (color) => {
+    changeColorCallback(color);
+  });
+};

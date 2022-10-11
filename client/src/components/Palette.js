@@ -13,6 +13,7 @@ function Palette() {
           value={color}
           onChange={(e) => setColor(e.target.value)}
         />
+        <br />
         {color}
         <button onClick={send(color)}>Click</button>
       </div>

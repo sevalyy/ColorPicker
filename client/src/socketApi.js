@@ -10,3 +10,10 @@ export const init = () => {
 
   socket.on("connect", () => console.log("connected to server!"));
 };
+
+export const send = (color) => {
+  if (socket) socket.emit("newColor", color);
+  else {
+    console.log("socket not ready, request ignored");
+  }
+};

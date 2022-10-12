@@ -8,15 +8,15 @@ function App() {
 
   useEffect(() => {
     init();
-
     subscribe((color) => {
       console.log("Setting active color", color);
       setActiveColor(color);
     });
   }, []);
+
   return (
     <div className="App" style={{ backgroundColor: activeColor }}>
-      <Palette />
+      <Palette activeColor={activeColor} />
     </div>
   );
 }

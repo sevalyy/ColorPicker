@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { send } from "../socketApi";
 
-function Palette() {
+function Palette({ activeColor }) {
   const [color, setColor] = useState("#5e30eb");
   return (
     <div>
@@ -10,12 +10,10 @@ function Palette() {
       <div className="palette">
         <input
           type="color"
-          value={color}
+          value={activeColor}
           onChange={(e) => setColor(e.target.value)}
         />
-        <br />
-        {color}
-        <button onClick={send(color)}>Click</button>
+        <button onClick={() => send(color)}>Click</button>
       </div>
     </div>
   );

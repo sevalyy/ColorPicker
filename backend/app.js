@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 let lastColor = "#5e30e";
 
 io.on("connection", (socket) => {
-  console.log("one user connected!");
+  console.log("one user connected");
 
   socket.emit("receive", lastColor);
 
